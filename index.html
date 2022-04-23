@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Control</title>
+</head>
+
+<body>
+    <button id="redButton" onclick="changeRedState()" class="redButton"></button>
+    <button id="greenButton" onclick="changeGreenState()" class="greenButton"></button>
+</body>
+<script>
+    const redButton = document.getElementById("redButton");
+    const greenButton = document.getElementById("greenButton");
+    var redState = false;
+    var greenState = false;
+
+    window.onload = () => {
+        redButton.innerText = "Ligar LED vermelho";
+        greenButton.innerText = "Ligar LED verde";
+    };
+
+    const changeRedState = () => {
+        if (redState) {
+            redButton.innerText = "Desligar LED vermelho";
+            redButton.style.backgroundColor = "#e00f0f";
+        } else {
+            redButton.innerText = "Ligar LED vermelho";
+            redButton.style.backgroundColor = "#6e0000";
+        }
+
+        redState = !redState;
+    }
+
+    const changeGreenState = () => {
+        if (greenState) {
+            greenButton.innerText = "Desligar LED verde";
+            greenButton.style.backgroundColor = "#00b126";
+        } else {
+            greenButton.innerText = "Ligar LED verde";
+            greenButton.style.backgroundColor = "#006315";
+        }
+
+        greenState = !greenState;
+    }
+</script>
+
+</html>
